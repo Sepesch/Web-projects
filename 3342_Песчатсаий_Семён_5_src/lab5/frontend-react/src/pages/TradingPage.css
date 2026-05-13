@@ -1,0 +1,114 @@
+.trading-controls {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.control-group {
+  margin-bottom: 1rem;
+}
+
+.control-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.control-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.control-buttons {
+  margin-top: 1.5rem;
+}
+
+.btn-start, .btn-stop {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-start {
+  background-color: #27ae60;
+  color: white;
+}
+
+.btn-start:hover {
+  background-color: #219a52;
+}
+
+.btn-stop {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-stop:hover {
+  background-color: #c0392b;
+}
+
+.trading-info {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.current-date {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.prices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.price-card {
+  border: 1px solid #e1e8ed;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  background: #f8f9fa;
+}
+
+.price-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+}
+
+.price-card .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #27ae60;
+  margin: 0.5rem 0;
+}
+
+.price-card span {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .prices-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .trading-controls,
+  .trading-info {
+    padding: 1rem;
+  }
+}

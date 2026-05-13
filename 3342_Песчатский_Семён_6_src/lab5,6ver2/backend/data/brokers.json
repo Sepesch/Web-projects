@@ -1,0 +1,101 @@
+[
+  {
+    "id": "2",
+    "name": "Charles Schwab",
+    "initialFunds": 42000,
+    "currentFunds": 42000,
+    "stocks": {
+      "AAPL": 15,
+      "AMD": 22,
+      "TSLA": 7
+    }
+  },
+  {
+    "id": "3",
+    "name": "Fidelity Investments",
+    "initialFunds": 38000,
+    "currentFunds": 38000,
+    "stocks": {
+      "AMZN": 7,
+      "CSCO": 16,
+      "META": 10
+    }
+  },
+  {
+    "id": "4",
+    "name": "TD Ameritrade",
+    "initialFunds": 32000,
+    "currentFunds": 2249.595000000001,
+    "stocks": {
+      "MSFT": 7,
+      "AMD": 1,
+      "AAPL": 119
+    }
+  },
+  {
+    "id": "5",
+    "name": "E*TRADE",
+    "initialFunds": 28000,
+    "currentFunds": 28000,
+    "stocks": {
+      "SBUX": 13,
+      "AAPL": 10,
+      "AMD": 14
+    }
+  },
+  {
+    "id": "6",
+    "name": "Merrill Lynch",
+    "initialFunds": 45000,
+    "currentFunds": 45000,
+    "stocks": {
+      "AMZN": 9,
+      "CSCO": 19,
+      "TSLA": 8
+    }
+  },
+  {
+    "id": "7",
+    "name": "Morgan Stanley",
+    "initialFunds": 52000,
+    "currentFunds": 52000,
+    "stocks": {
+      "META": 15,
+      "MSFT": 13,
+      "NFLX": 11
+    }
+  },
+  {
+    "id": "8",
+    "name": "Goldman Sachs",
+    "initialFunds": 60000,
+    "currentFunds": 60000,
+    "stocks": {
+      "QCOM": 22,
+      "SBUX": 26,
+      "AAPL": 20
+    }
+  },
+  {
+    "id": "9",
+    "name": "JP Morgan Chase",
+    "initialFunds": 48000,
+    "currentFunds": 48000,
+    "stocks": {
+      "AMD": 25,
+      "AMZN": 10,
+      "CSCO": 20
+    }
+  },
+  {
+    "id": "10",
+    "name": "Deutsche Bank",
+    "initialFunds": 35000,
+    "currentFunds": 35000,
+    "stocks": {
+      "META": 10,
+      "MSFT": 9,
+      "TSLA": 6
+    }
+  }
+]

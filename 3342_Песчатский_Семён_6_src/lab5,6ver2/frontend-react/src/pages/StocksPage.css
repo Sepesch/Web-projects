@@ -1,0 +1,473 @@
+.stocks-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.page-header h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.page-description {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Список акций */
+.stocks-list-section {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.section-header {
+  background: #34495e;
+  color: white;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.stocks-stats {
+  display: flex;
+  gap: 20px;
+  font-size: 0.9rem;
+}
+
+.total-stocks, .enabled-stocks {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.stocks-grid {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+/* Карточка акции */
+.stock-card {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stock-card.enabled {
+  border-color: #27ae60;
+  background: linear-gradient(135deg, #f8fff9 0%, #f0f9f0 100%);
+}
+
+.stock-card.disabled {
+  border-color: #bdc3c7;
+  background: #f8f9fa;
+}
+
+.stock-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.stock-card.enabled::before {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+}
+
+.stock-card.disabled::before {
+  background: linear-gradient(135deg, #95a5a6, #bdc3c7);
+}
+
+.stock-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.stock-info {
+  margin-bottom: 20px;
+}
+
+.stock-symbol {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.stock-name {
+  color: #7f8c8d;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.stock-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-label {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+}
+
+.status, .history-status {
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.status.enabled, .history-status.loaded {
+  background: #d5f4e6;
+  color: #27ae60;
+}
+
+.status.disabled, .history-status.not-loaded {
+  background: #f0f0f0;
+  color: #7f8c8d;
+}
+
+.stock-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-toggle, .btn-view-details, .btn-load-history {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btn-enable {
+  background: #27ae60;
+  color: white;
+}
+
+.btn-enable:hover {
+  background: #219a52;
+}
+
+.btn-disable {
+  background: #e74c3c;
+  color: white;
+}
+
+.btn-disable:hover {
+  background: #c0392b;
+}
+
+.btn-view-details {
+  background: #3498db;
+  color: white;
+}
+
+.btn-view-details:hover {
+  background: #2980b9;
+}
+
+.btn-load-history {
+  background: #f39c12;
+  color: white;
+}
+
+.btn-load-history:hover:not(:disabled) {
+  background: #e67e22;
+}
+
+.btn-load-history:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Детальный просмотр */
+.stock-detail-view {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 30px;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.btn-back {
+  background: #95a5a6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+  background: #7f8c8d;
+}
+
+.detail-header h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.8rem;
+}
+
+.status-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.status-badge.enabled {
+  background: #d5f4e6;
+  color: #27ae60;
+}
+
+.status-badge.disabled {
+  background: #f0f0f0;
+  color: #7f8c8d;
+}
+
+.stock-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.history-loaded {
+  background: #d5f4e6;
+  color: #27ae60;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.chart-section {
+  margin-bottom: 40px;
+}
+
+.chart-section h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.stock-chart {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ecf0f1;
+}
+
+.chart-empty, .no-data-message {
+  text-align: center;
+  padding: 60px 20px;
+  color: #7f8c8d;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 2px dashed #bdc3c7;
+}
+
+/* Таблица исторических данных */
+.history-table-section h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.table-container {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #ecf0f1;
+  overflow: hidden;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.history-table th {
+  background: #34495e;
+  color: white;
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.history-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.history-table tr:hover {
+  background: #f8f9fa;
+}
+
+.price-cell {
+  font-weight: 600;
+  color: #27ae60;
+}
+
+.table-note {
+  padding: 15px;
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  background: #f8f9fa;
+}
+
+/* Сообщения об ошибках */
+.error-message {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.error-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.error-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .stocks-page {
+    padding: 15px;
+  }
+  
+  .stocks-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .stocks-stats {
+    justify-content: center;
+  }
+  
+  .stocks-grid {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+  
+  .detail-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .stock-actions {
+    flex-direction: column;
+  }
+  
+  .stock-detail-view {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stocks-page {
+    padding: 10px;
+  }
+  
+  .page-header h1 {
+    font-size: 1.7rem;
+  }
+  
+  .stock-card {
+    padding: 20px;
+  }
+  
+  .stock-actions {
+    gap: 8px;
+  }
+  
+  .btn-toggle, .btn-view-details, .btn-load-history {
+    width: 100%;
+  }
+}

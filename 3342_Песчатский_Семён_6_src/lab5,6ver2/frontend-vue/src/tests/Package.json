@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "test:unit": "jest tests/unit --coverage",
+    "test:integration": "jest tests/integration",
+    "test:e2e": "cypress run",
+    "test:e2e:open": "cypress open",
+    "test:selenium": "node tests/integration/selenium.test.js",
+    "test:all": "npm run test:unit && npm run test:integration && npm run test:e2e",
+    "test:ci": "start-server-and-test start http://localhost:8080 test:all"
+  }
+}

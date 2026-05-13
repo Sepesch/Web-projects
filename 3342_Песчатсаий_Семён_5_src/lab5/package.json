@@ -1,0 +1,21 @@
+{
+  "name": "lab5-6",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend-react", 
+    "frontend-vue"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:react\"",
+    "dev:backend": "npm run start:dev --workspace=backend",
+    "dev:react": "npm run dev --workspace=frontend-react",
+    "dev:vue": "npm run dev --workspace=frontend-vue",
+    "install:all": "npm install",
+    "build:all": "npm run build --workspace=backend && npm run build --workspace=frontend-react && npm run build --workspace=frontend-vue"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

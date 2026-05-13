@@ -1,0 +1,514 @@
+.brokers-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.page-header h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.page-description {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Форма добавления брокера */
+.add-broker-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+  color: white;
+}
+
+.add-broker-section h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.broker-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 15px;
+  align-items: end;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.form-group input {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.btn-add {
+  padding: 12px 25px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: fit-content;
+}
+
+.btn-add:hover {
+  background: #219a52;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+.btn-add:active {
+  transform: translateY(0);
+}
+
+/* Список брокеров */
+.brokers-list-section {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.section-header {
+  background: #34495e;
+  color: white;
+  padding: 20px 30px;
+  margin: 0;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.brokers-grid {
+  padding: 30px;
+  display: grid;
+  gap: 25px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #7f8c8d;
+}
+
+.empty-state .icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #95a5a6;
+}
+
+/* Карточка брокера */
+.broker-card {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.broker-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  transition: width 0.3s ease;
+}
+
+.broker-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border-color: #3498db;
+}
+
+.broker-card:hover::before {
+  width: 6px;
+}
+
+.broker-info {
+  flex: 1;
+}
+
+.broker-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.broker-funds {
+  display: flex;
+  gap: 30px;
+}
+
+.fund-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.fund-label {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fund-value {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #27ae60;
+}
+
+.fund-value.initial {
+  color: #3498db;
+}
+
+/* Форма редактирования */
+.edit-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.edit-form-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.edit-form-header h4 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.2rem;
+}
+
+.edit-input-group {
+  display: flex;
+  gap: 15px;
+  align-items: end;
+}
+
+.edit-input {
+  flex: 1;
+}
+
+.edit-input label {
+  display: block;
+  margin-bottom: 5px;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.edit-input input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.edit-input input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-save {
+  padding: 10px 20px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-save:hover {
+  background: #219a52;
+  transform: translateY(-1px);
+}
+
+.btn-cancel {
+  padding: 10px 20px;
+  background: #95a5a6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-cancel:hover {
+  background: #7f8c8d;
+  transform: translateY(-1px);
+}
+
+/* Действия брокера */
+.broker-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-edit, .btn-delete {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+.btn-edit {
+  background: #f39c12;
+  color: white;
+}
+
+.btn-edit:hover {
+  background: #e67e22;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
+}
+
+.btn-delete {
+  background: #e74c3c;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+/* Сообщения об ошибках и загрузке */
+.error-message {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.error-message::before {
+  content: '⚠️';
+  font-size: 1.2rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+.loading::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #3498db;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .brokers-page {
+    padding: 15px;
+  }
+  
+  .broker-form {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .btn-add {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .add-broker-section {
+    padding: 20px;
+  }
+  
+  .brokers-grid {
+    padding: 20px;
+  }
+  
+  .broker-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .broker-funds {
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .broker-actions {
+    justify-content: center;
+  }
+  
+  .edit-input-group {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .edit-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .brokers-page {
+    padding: 10px;
+  }
+  
+  .page-header h1 {
+    font-size: 1.7rem;
+  }
+  
+  .broker-funds {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .broker-actions {
+    flex-direction: column;
+  }
+  
+  .btn-edit, .btn-delete {
+    width: 100%;
+  }
+  
+  .edit-actions {
+    flex-direction: column;
+  }
+  
+  .btn-save, .btn-cancel {
+    width: 100%;
+  }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.broker-card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.broker-card:nth-child(even) {
+  animation-delay: 0.1s;
+}
+
+.broker-card:nth-child(odd) {
+  animation-delay: 0.2s;
+}
+
+/* Специальные состояния */
+.broker-card.low-funds .fund-value {
+  color: #e74c3c;
+}
+
+.broker-card.high-funds .fund-value {
+  color: #27ae60;
+}
+
+.broker-card.new-broker {
+  border: 2px dashed #3498db;
+  background: rgba(52, 152, 219, 0.05);
+}
+
+.broker-card.new-broker::before {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+}
