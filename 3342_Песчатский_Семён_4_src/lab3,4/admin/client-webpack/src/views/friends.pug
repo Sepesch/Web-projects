@@ -1,0 +1,91 @@
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Друзья - Админ панель
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet")
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet")
+    link(rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👥</text></svg>")
+
+  body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+      .container
+        a.navbar-brand(href="/webpack/users")
+          i.bi.bi-people-fill.me-2
+          | Социальная сеть - Админ
+        .navbar-nav.ms-auto
+          a.nav-link(href="/webpack/users")
+            i.bi.bi-people.me-1
+            | Пользователи
+          a.nav-link.active(href="/webpack/friends")
+            i.bi.bi-person-heart.me-1
+            | Друзья
+          a.nav-link(href="/webpack/news")
+            i.bi.bi-newspaper.me-1
+            | Новости
+
+    .container.mt-4
+      .row.mb-4
+        .col-12
+          h1.h3.mb-1
+            i.bi.bi-person-heart.text-primary.me-2
+            | Управление друзьями
+          p.text-muted Просмотр и управление дружескими связями пользователей
+
+      .row.mb-4
+        .col-12
+          .card
+            .card-body
+              .row.align-items-end
+                .col-md-8
+                  label.form-label.fw-bold Выберите пользователя для просмотра его друзей:
+                  select#user-select.form-select
+                    option(value="") -- Выберите пользователя --
+                .col-md-4
+                  button#refresh-friends.btn.btn-outline-primary.w-100
+                    i.bi.bi-arrow-clockwise.me-1
+                    | Обновить список
+
+      .row.mb-4
+        .col-12
+          .row
+            .col-md-3
+              .card.bg-primary.text-white
+                .card-body.text-center
+                  i.bi.bi-people-fill.display-6
+                  h4.mt-2#total-friends 0
+                  p.mb-0 Всего друзей
+            .col-md-3
+              .card.bg-success.text-white
+                .card-body.text-center
+                  i.bi.bi-person-check.display-6
+                  h4.mt-2#active-friends 0
+                  p.mb-0 Активных друзей
+            .col-md-3
+              .card.bg-warning.text-white
+                .card-body.text-center
+                  i.bi.bi-person-dash.display-6
+                  h4.mt-2#pending-friends 0
+                  p.mb-0 Не подтверждённых
+            .col-md-3
+              .card.bg-danger.text-white
+                .card-body.text-center
+                  i.bi.bi-person-x.display-6
+                  h4.mt-2#blocked-friends 0
+                  p.mb-0 Заблокированных
+
+      .row
+        .col-12
+          .card
+            .card-header.bg-light
+              h5.card-title.mb-0
+                i.bi.bi-list-ul.me-2
+                | Список друзей
+                span.badge.bg-primary.ms-2#friends-count 0
+            .card-body
+              #friends-container
+                .text-center.py-4
+                  i.bi.bi-person-plus.display-1.text-muted
+                  p.mt-3.text-muted Выберите пользователя для просмотра списка его друзей
+
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js")

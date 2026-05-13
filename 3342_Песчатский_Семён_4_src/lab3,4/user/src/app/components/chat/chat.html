@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сообщения - Социальная сеть</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="chat.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👥</text></svg>">
+</head>
+<body class="chat-body">
+    <!-- Ошибка -->
+    <div *ngIf="errorMessage" class="container-fluid py-4">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="alert alert-danger" role="alert">
+                    {{ errorMessage }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Основной контент -->
+    <div *ngIf="!isLoading" class="container-fluid py-4">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold" routerLink="/feed">
+                    <i class="bi bi-people-fill me-2"></i>
+                    Социальная сеть
+                </a>
+                
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" routerLink="/feed" style="cursor: pointer;">
+                        <i class="bi bi-arrow-left me-1"></i>
+                        Назад к ленте
+                    </a>
+                    <a class="nav-link" (click)="logout()" style="cursor: pointer;">
+                        <i class="bi bi-box-arrow-right me-1"></i>
+                        Выйти
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="row justify-content-center mt-4">
+            <!-- Левая панель - список пользователей -->
+            <div class="col-lg-4 col-md-5">
+                <div class="sidebar-card">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="fw-bold mb-0">
+                            <i class="bi bi-chat-dots me-2"></i>
+                            Сообщения
+                        </h5>
+                        <span class="badge bg-primary rounded-pill">{{ filteredUsers.length }}</span>
+                    </div>
+
+                    <!-- Поиск пользователей -->
+                    <div class="search-box mb-4">
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-end-0">
+                                <i class="bi bi-search text-muted"></i>
+                            </span>
+                            <input 
+                                type="text" 
+                                class="form-control border-start-0" 
+                                placeholder="Поиск пользователей..."
+                                [(ngModel)]="searchTerm"
+                                (input)="filterUsers()"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Список пользователей -->
+                    <div class="users-list">
+                        <div *ngFor="let user of filteredUsers" 
+                             class="user-item d-flex align-items-center p-3 rounded-3 mb-2"
+                             [class.active]="selectedUser?.id === user.id"
+                             (click)="selectUser(user)">
+                            <div class="position-relative me-3">
+                                <img [src]="getUserAvatar(user.id)" [alt]="user.fullName" class="user-avatar-sm rounded-circle">
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="fw-bold mb-1">{{ user.fullName }}</h6>
+                                <p *ngIf="getLastMessage(user.id)" class="text-muted small mb-0 text-truncate">
+                                    {{ getLastMessage(user.id)?.text }}
+                                </p>
+                                <small *ngIf="getLastMessage(user.id)" class="text-muted">
+                                    {{ getLastMessage(user.id)?.timestamp | date:'shortTime' }}
+                                </small>
+                            </div>
+                        </div>
+
+                        <div *ngIf="filteredUsers.length === 0" class="text-center text-muted py-4">
+                            <i class="bi bi-person-x display-4 d-block mb-2"></i>
+                            <p>Пользователи не найдены</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-7">
+                <div *ngIf="selectedUser" class="chat-card">
+                    <div class="chat-header d-flex justify-content-between align-items-center p-4 border-bottom">
+                        <div class="d-flex align-items-center">
+                            <div class="position-relative me-3">
+                                <img [src]="getUserAvatar(selectedUser.id)" [alt]="selectedUser.fullName" class="user-avatar-sm rounded-circle">
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-0">{{ selectedUser.fullName }}</h5>   
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-messages p-4" #messagesContainer style="scrollbar-width: none; -ms-overflow-style: none;">
+                        <div *ngFor="let message of getMessages(selectedUser.id)" 
+                             [class]="'message ' + message.type + ' mb-3'">
+                             
+                            <div *ngIf="message.type === 'received'" class="message-avatar me-3">
+                                <img [src]="getUserAvatar(selectedUser.id)" [alt]="selectedUser.fullName" class="rounded-circle">
+                            </div>
+                            
+                            <div class="message-content">
+                                <div class="message-bubble" [class.sent]="message.type === 'sent'" [class.received]="message.type === 'received'">
+                                    {{ message.text }}
+                                </div>
+                                <div class="message-time small text-muted mt-1">
+                                    {{ message.timestamp | date:'HH:mm' }}
+                                </div>
+                            </div>
+                            
+                            <div *ngIf="message.type === 'sent'" class="message-avatar ms-3">
+                                <img [src]="getUserAvatar(currentUser.id)" [alt]="currentUser.fullName" class="rounded-circle">
+                            </div>
+                        </div>
+
+                        <div *ngIf="getMessages(selectedUser.id).length === 0" class="text-center text-muted py-5">
+                            <i class="bi bi-chat-square-text display-4 d-block mb-2"></i>
+                            <p>Начните общение с {{ selectedUser.fullName }}</p>
+                            <small class="text-muted">Напишите первое сообщение</small>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input p-4 border-top">
+                        <form (ngSubmit)="sendMessage()" class="d-flex gap-3 align-items-end">
+                            <div class="flex-grow-1">
+                                <textarea 
+                                    class="form-control message-textarea" 
+                                    [(ngModel)]="newMessage"
+                                    name="newMessage"
+                                    rows="1" 
+                                    placeholder="Введите сообщение..."
+                                    [maxLength]="maxMessageLength"
+                                    (keydown)="onEnterKey($event)"
+                                    (input)="onMessageInput()"
+                                    required>
+                                </textarea>
+                                <div class="form-text text-end mt-1">
+                                    <span [class.text-danger]="newMessage.length > maxMessageLength - 100">
+                                        {{ newMessage.length }}
+                                    </span>/{{ maxMessageLength }}
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary send-button" 
+                                    [disabled]="!newMessage.trim() || newMessage.length > maxMessageLength">
+                                <i class="bi bi-send"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div *ngIf="!selectedUser" class="chat-card placeholder-card">
+                    <div class="text-center text-muted py-5">
+                        <i class="bi bi-chat-left-text display-1 d-block mb-3"></i>
+                        <h4>Выберите пользователя для начала общения</h4>
+                        <p>Выберите собеседника из списка слева чтобы начать переписку</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

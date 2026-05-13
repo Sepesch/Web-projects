@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пользователи - Админ панель</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👥</text></svg>">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/gulp/users">
+                <i class="bi bi-people-fill me-2"></i>
+                Социальная сеть - Админ
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link active" href="/gulp/users">
+                    <i class="bi bi-people me-1"></i>
+                    Пользователи
+                </a>
+                <a class="nav-link" href="/gulp/friends">
+                    <i class="bi bi-person-heart me-1"></i>
+                    Друзья
+                </a>
+                <a class="nav-link" href="/gulp/news">
+                    <i class="bi bi-newspaper me-1"></i>
+                    Новости
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <div class="container mt-4">
+        <!-- Заголовок -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h1 class="h3 mb-1">
+                            <i class="bi bi-people text-primary me-2"></i>
+                            Управление пользователями
+                        </h1>
+                        <p class="text-muted">Всего пользователей: <span id="users-count" class="fw-bold">0</span></p>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-primary" id="refresh-users">
+                            <i class="bi bi-arrow-clockwise me-1"></i>
+                            Обновить
+                        </button>
+                        <button class="btn btn-outline-secondary" onclick="resetFilters()">
+                            <i class="bi bi-x-circle me-1"></i>
+                            Сбросить фильтры
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Фильтры -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Поиск по имени или email</label>
+                                <input type="text" class="form-control" id="search-input" placeholder="Введите имя или email...">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Статус</label>
+                                <select class="form-select" id="status-filter">
+                                    <option value="">Все статусы</option>
+                                    <option value="active">Активный</option>
+                                    <option value="pending">Не подтверждённый</option>
+                                    <option value="blocked">Заблокированный</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Роль</label>
+                                <select class="form-select" id="role-filter">
+                                    <option value="">Все роли</option>
+                                    <option value="admin">Администратор</option>
+                                    <option value="user">Пользователь</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- КОНТЕЙНЕР ДЛЯ ПОЛЬЗОВАТЕЛЕЙ -->
+        <div class="row">
+            <div class="col-12">
+                <div id="users-container">
+                    <div class="text-center py-5">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно редактирования -->
+    <div class="modal fade" id="editUserModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Редактирование пользователя</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-user-form">
+                        <input type="hidden" id="edit-user-id">
+                        <div class="mb-3">
+                            <label class="form-label">ФИО</label>
+                            <input type="text" class="form-control" id="edit-fullName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="edit-email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Дата рождения</label>
+                            <input type="date" class="form-control" id="edit-birthDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Роль</label>
+                            <select class="form-select" id="edit-role" required>
+                                <option value="user">Пользователь</option>
+                                <option value="admin">Администратор</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Статус</label>
+                            <select class="form-select" id="edit-status" required>
+                                <option value="active">Активный</option>
+                                <option value="pending">Не подтверждённый</option>
+                                <option value="blocked">Заблокированный</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary" id="save-user-changes">
+                        <i class="bi bi-check-lg me-1"></i>
+                        Сохранить
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/users.js"></script>
+</body>
+</html>

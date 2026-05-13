@@ -1,0 +1,35 @@
+doctype html
+html(lang="ru")
+head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Библиотека - #{title || 'Главная'}
+    link(rel="stylesheet", href="https://www.w3schools.com/w3css/4/w3.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css")
+    link(rel="stylesheet", href="/css/style.css")
+body
+    header.w3-container.w3-purple
+        h1 
+            i.fas.fa-book
+            |  Домашняя библиотека
+    main.w3-container
+        block content
+
+    dialog#readerDialog
+        .w3-modal-content.w3-card-4
+            header.w3-container.w3-purple
+                h2 Выдать книгу
+            .w3-container
+                form#borrowForm
+                    p
+                        label Имя читателя:
+                        input.w3-input.w3-border(type="text", name="readerName", required)
+                    .w3-margin-top
+                        button.w3-button.w3-green(type="submit") 
+                            i.fas.fa-check
+                            |  Выдать
+                        button.w3-button.w3-red(type="button", onclick="closeDialog()") 
+                            i.fas.fa-times
+                            |  Отмена
+
+    script(src="/js/main.js")

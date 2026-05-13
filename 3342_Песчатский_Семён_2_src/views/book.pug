@@ -1,0 +1,52 @@
+extends layout.pug
+
+block content
+    .w3-container
+        .w3-bar
+            a.w3-button.w3-purple(href="/")
+                i.fas.fa-arrow-left
+                |  Назад
+
+        .w3-card-4
+            .w3-container.w3-purple
+                h2 Редактирование книги
+
+            form.w3-container#bookForm
+                p
+                    label Название:
+                    input.w3-input.w3-border(type="text", name="title", value=book.title, required)
+                p
+                    label Автор:
+                    input.w3-input.w3-border(type="text", name="author", value=book.author, required)
+                p
+                    label Год издания:
+                    input.w3-input.w3-border(type="number", name="year", value=book.year, required)
+
+                if !book.isAvailable
+                    .w3-panel.w3-pale-yellow
+                        h4 Информация о выдаче:
+                        p
+                            strong Читатель: 
+                            | #{book.borrowedBy}
+                        p
+                            strong Дата выдачи: 
+                            | #{book.borrowDate}
+                        p
+                            strong Вернуть до: 
+                            | #{book.dueDate}
+                        if new Date(book.dueDate) < new Date()
+                            .w3-tag.w3-red Просрочена!
+
+                .w3-margin-top.w3-bar
+                    button#btn_id.w3-button.w3-green(type="submit" data-id=book.id)
+                        i.fas.fa-save
+                        |  Сохранить
+                    
+                    if book.isAvailable
+                        button.w3-button.w3-purple(type="button", onclick=`borrowBook(${book.id})`)
+                            i.fas.fa-hand-holding
+                            |  Выдать книгу
+                    else
+                        button.w3-button.w3-orange(type="button", onclick=`returnBook(${book.id})`)
+                            i.fas.fa-undo
+                            |  Вернуть книгу

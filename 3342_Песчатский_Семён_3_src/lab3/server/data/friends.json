@@ -1,0 +1,81 @@
+[
+  {
+    "userId": 1,
+    "friends": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "userId": 2,
+    "friends": [
+      1,
+      3,
+      6
+    ]
+  },
+  {
+    "userId": 3,
+    "friends": [
+      1,
+      2,
+      7
+    ]
+  },
+  {
+    "userId": 4,
+    "friends": [
+      1,
+      5,
+      8
+    ]
+  },
+  {
+    "userId": 5,
+    "friends": [
+      1,
+      4,
+      9
+    ]
+  },
+  {
+    "userId": 6,
+    "friends": [
+      2,
+      7,
+      10
+    ]
+  },
+  {
+    "userId": 7,
+    "friends": [
+      3,
+      6,
+      8
+    ]
+  },
+  {
+    "userId": 8,
+    "friends": [
+      4,
+      7,
+      9
+    ]
+  },
+  {
+    "userId": 9,
+    "friends": [
+      5,
+      10
+    ]
+  },
+  {
+    "userId": 10,
+    "friends": [
+      6,
+      9
+    ]
+  }
+]

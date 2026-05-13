@@ -1,0 +1,63 @@
+    .book-card {
+        transition: transform 0.3s;
+        height: 100%;
+    }
+
+    .book-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .book-card.borrowed {
+        border-left: 4px solid #ff9800;
+    }
+
+    .book-card.overdue {
+        border-left: 4px solid #f44336;
+    }
+
+    .w3-tag {
+        margin: 2px;
+    }
+
+    .dialog-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dialog-content {
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        min-width: 300px;
+    }
+    #borrowDialog {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dialog-content {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        min-width: 300px;
+    }
+
+    .dialog-buttons {
+        margin-top: 15px;
+        display: flex;
+        gap: 10px;
+    }

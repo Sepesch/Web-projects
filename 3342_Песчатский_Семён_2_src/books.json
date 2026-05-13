@@ -1,0 +1,44 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Мастер и Маргарита",
+      "author": "Михаил Булгаков",
+      "year": "1967",
+      "isAvailable": true,
+      "borrowedBy": "",
+      "dueDate": "",
+      "borrowDate": ""
+    },
+    {
+      "id": 2,
+      "title": "Преступление и наказание",
+      "author": "Федор Достоевский",
+      "year": 1866,
+      "isAvailable": true,
+      "borrowedBy": "",
+      "dueDate": "",
+      "borrowDate": ""
+    },
+    {
+      "id": 3,
+      "title": "Война и мир",
+      "author": "Лев Толстой",
+      "year": 1869,
+      "isAvailable": true,
+      "borrowedBy": "",
+      "dueDate": "",
+      "borrowDate": ""
+    },
+    {
+      "id": 4,
+      "title": "Без названия",
+      "author": "Неизвестен",
+      "year": "1123",
+      "isAvailable": false,
+      "borrowedBy": "333",
+      "dueDate": "2025-8-27",
+      "borrowDate": "2025-7-27"
+    }
+  ]
+}

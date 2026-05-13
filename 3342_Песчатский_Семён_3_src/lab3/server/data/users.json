@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "fullName": "Иван Иванов",
+    "email": "ivan@mail.com",
+    "password": "yes",
+    "birthDate": "2025-06-15",
+    "photo": "photos/user1.jpg",
+    "role": "admin",
+    "status": "active",
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "fullName": "Мария Сидорова",
+    "email": "maria@mail.com",
+    "password": "",
+    "birthDate": "1992-12-10",
+    "photo": "photos/user3.jpg",
+    "role": "user",
+    "status": "blocked",
+    "isActive": false
+  },
+  {
+    "id": 4,
+    "fullName": "Анна Козлова",
+    "email": "anna@mail.com",
+    "password": "",
+    "birthDate": "1988-03-25",
+    "photo": "photos/user4.jpg",
+    "role": "user",
+    "status": "active",
+    "isActive": true
+  },
+  {
+    "id": 5,
+    "fullName": "Сергей Смирнов",
+    "email": "sergey@mail.com",
+    "password": "",
+    "birthDate": "1983-11-08",
+    "photo": "photos/user5.jpg",
+    "role": "user",
+    "status": "active",
+    "isActive": true
+  },
+  {
+    "id": 6,
+    "fullName": "Елена Новикова",
+    "email": "elena@mail.com",
+    "password": "",
+    "birthDate": "1995-07-14",
+    "photo": "photos/user6.jpg",
+    "role": "user",
+    "status": "pending",
+    "isActive": false
+  },
+  {
+    "id": 7,
+    "fullName": "Дмитрий Попов",
+    "email": "dmitry@mail.com",
+    "password": "",
+    "birthDate": "1987-09-30",
+    "photo": "photos/user7.jpg",
+    "role": "admin",
+    "status": "active",
+    "isActive": true
+  },
+  {
+    "id": 8,
+    "fullName": "Ольга Васильева",
+    "email": "olga@mail.com",
+    "password": "",
+    "birthDate": "1991-04-18",
+    "photo": "photos/user8.jpg",
+    "role": "user",
+    "status": "blocked",
+    "isActive": false
+  },
+  {
+    "id": 9,
+    "fullName": "Алексей Морозов",
+    "email": "alexey@mail.com",
+    "password": "",
+    "birthDate": "1989-12-03",
+    "photo": "photos/user9.jpg",
+    "role": "user",
+    "status": "active",
+    "isActive": true
+  },
+  {
+    "id": 10,
+    "fullName": "Наталья Павлова",
+    "email": "natalya@mail.com",
+    "password": "",
+    "birthDate": "1993-06-22",
+    "photo": "photos/user10.jpg",
+    "role": "user",
+    "status": "pending",
+    "isActive": false
+  },
+  {
+    "id": 11,
+    "fullName": "Семён Песчатский",
+    "email": "sp1.8@mail.ru",
+    "password": "P1vohlep",
+    "birthDate": "2005-08-01",
+    "photo": "photos/user11.jpg",
+    "role": "user",
+    "status": "active",
+    "isActive": true
+  }
+]

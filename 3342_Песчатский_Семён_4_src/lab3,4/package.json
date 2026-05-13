@@ -1,0 +1,58 @@
+{
+  "name": "lab3and4",
+  "version": "1.0.0",
+  "description": "Social network administration panel",
+  "type": "module",
+  "main": "server/server.js",
+  "scripts": {
+    "serve": "concurrently \"cd user && ng serve\" \"./node_modules/nodemon/bin/nodemon.js ./node_server/bin/www\"",
+    "start": "node server/server.js",
+    "build-gulp": "cd admin/client-gulp && gulp build",
+    "build-webpack": "cd admin/client-webpack && webpack --mode=production",
+    "build-user": "cd user && ng build",
+    "build-all": "npm run build-gulp && npm run build-webpack && npm run build-user",
+    "dev": "node server/server.js"
+  },
+  "keywords": [
+    "social",
+    "network",
+    "admin",
+    "express"
+  ],
+  "author": "Developer",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemon": "^3.1.11",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.0",
+    "@babel/preset-env": "^7.22.0",
+    "babel-loader": "^9.1.3",
+    "concurrently": "^9.2.1",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "css-minimizer-webpack-plugin": "^5.0.1",
+    "del": "^8.0.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-less": "^5.0.0",
+    "gulp-uglify": "^3.0.2",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.3",
+    "less": "^4.1.3",
+    "less-loader": "^11.1.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "pug": "^2.0.0",
+    "pug-loader": "^2.4.0",
+    "sass": "^1.63.6",
+    "sass-loader": "^13.3.2",
+    "terser-webpack-plugin": "^5.3.9",
+    "webpack": "^5.88.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

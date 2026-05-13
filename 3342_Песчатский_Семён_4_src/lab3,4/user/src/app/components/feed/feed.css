@@ -1,0 +1,247 @@
+/* CSS Variables */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --gradient-start: #667eea;
+  --gradient-end: #764ba2;
+}
+
+/* Base styles */
+.feed-body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Navigation */
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Cards */
+.sidebar-card,
+.post-card,
+.create-post-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #e9ecef;
+}
+
+/* User avatars */
+.user-avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.user-avatar-sm {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+}
+
+.user-avatar-xs {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+}
+
+/* User profile */
+.user-stats {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item span {
+  display: block;
+  font-size: 1.25rem;
+}
+
+/* Quick actions */
+.quick-actions .btn {
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
+
+/* Create post */
+.create-post-card .form-control {
+  border-radius: 2rem;
+  border: 1px solid #e9ecef;
+  padding: 0.75rem 1rem;
+}
+
+.create-post-card .form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.1);
+}
+
+.post-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.post-actions .btn-sm {
+  border-radius: 1rem;
+  font-size: 0.875rem;
+}
+
+/* Feed filters */
+.feed-filters .btn-group .btn {
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
+
+.feed-filters .btn-group .btn.active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Post card */
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.post-header h6 {
+  color: var(--dark-color);
+}
+
+.post-content .post-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.post-link {
+  border-left: 4px solid var(--primary-color);
+}
+
+.recipe-content ul {
+  margin-bottom: 0;
+  padding-left: 1rem;
+}
+
+.post-stats {
+  margin: 1rem 0;
+  padding: 0.75rem 0;
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.post-actions .btn {
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
+
+/* Online friends */
+.online-friends .online-friend {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.online-friends .online-friend:hover {
+  background-color: var(--light-color);
+}
+
+/* Recommendations */
+.recommendation-item {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e9ecef;
+}
+
+.recommendation-item .btn {
+  border-radius: 1rem;
+  font-size: 0.875rem;
+}
+
+/* Dropdown */
+.dropdown-menu {
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 1rem;
+  }
+  
+  .sidebar-card,
+  .post-card,
+  .create-post-card {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .post-actions {
+    flex-direction: column;
+  }
+  
+  .user-stats {
+    gap: 1rem;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Utility classes */
+.text-muted {
+  color: var(--secondary-color) !important;
+}
+
+.bg-light {
+  background-color: var(--light-color) !important;
+}
+
+/* Button hover effects */
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* Focus states */
+.btn:focus,
+.form-control:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}

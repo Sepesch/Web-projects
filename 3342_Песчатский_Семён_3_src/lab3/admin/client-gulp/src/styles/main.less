@@ -1,0 +1,70 @@
+// Variables
+@primary-color: #007bff;
+@secondary-color: #6c757d;
+@success-color: #28a745;
+@danger-color: #dc3545;
+@warning-color: #ffc107;
+
+// Mixins
+.border-radius(@radius: 4px) {
+  border-radius: @radius;
+}
+
+.box-shadow(@x: 0, @y: 2px, @blur: 4px, @color: rgba(0,0,0,0.1)) {
+  box-shadow: @x @y @blur @color;
+}
+
+// Nested blocks
+.user-card {
+  .border-radius(8px);
+  .box-shadow();
+  border: 1px solid #e2e6;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    
+    .user-photo {
+      width: 60px;
+      height: 60px;
+      .border-radius(50%);
+      margin-right: 1rem;
+    }
+    
+    .user-details {
+      flex: 1;
+      
+      h5 {
+        margin: 0;
+        color: @primary-color;
+      }
+      
+      p {
+        margin: 0.2rem 0;
+        color: @secondary-color;
+      }
+    }
+  }
+  
+  .user-actions {
+    margin-top: 1rem;
+    
+    .btn {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+// Operators
+@container-width: 100%;
+@sidebar-width: 250px;
+
+.main-container {
+  width: @container-width;
+  
+  .content-area {
+    width: calc(@container-width - @sidebar-width);
+  }
+}

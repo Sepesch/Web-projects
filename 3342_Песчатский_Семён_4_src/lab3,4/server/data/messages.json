@@ -1,0 +1,330 @@
+[
+  {
+    "id": 1,
+    "senderId": 2,
+    "recipientId": 1,
+    "text": "Привет! Как дела?",
+    "timestamp": "2024-01-15T10:30:00.000Z",
+    "read": true
+  },
+  {
+    "id": 2,
+    "senderId": 1,
+    "recipientId": 2,
+    "text": "Привет! Все отлично, спасибо! А у тебя как?",
+    "timestamp": "2024-01-15T10:32:15.000Z",
+    "read": true
+  },
+  {
+    "id": 3,
+    "senderId": 2,
+    "recipientId": 1,
+    "text": "Тоже хорошо! Хотел спросить про вчерашнюю встречу",
+    "timestamp": "2024-01-15T10:33:00.000Z",
+    "read": true
+  },
+  {
+    "id": 4,
+    "senderId": 3,
+    "recipientId": 1,
+    "text": "Здравствуйте, Иван! У вас есть минутка?",
+    "timestamp": "2024-01-14T09:15:00.000Z",
+    "read": true
+  },
+  {
+    "id": 5,
+    "senderId": 1,
+    "recipientId": 3,
+    "text": "Да, конечно! Чем могу помочь?",
+    "timestamp": "2024-01-14T09:20:00.000Z",
+    "read": true
+  },
+  {
+    "id": 6,
+    "senderId": 4,
+    "recipientId": 1,
+    "text": "Привет! Напомни, пожалуйста, когда у нас следующий дедлайн?",
+    "timestamp": "2024-01-16T14:45:00.000Z",
+    "read": true
+  },
+  {
+    "id": 7,
+    "senderId": 1,
+    "recipientId": 4,
+    "text": "Привет! Дедлайн в пятницу, 19 января",
+    "timestamp": "2024-01-16T14:50:00.000Z",
+    "read": true
+  },
+  {
+    "id": 8,
+    "senderId": 5,
+    "recipientId": 1,
+    "text": "Добрый день! Отправил вам отчет на проверку",
+    "timestamp": "2024-01-16T11:20:00.000Z",
+    "read": true
+  },
+  {
+    "id": 9,
+    "senderId": 1,
+    "recipientId": 5,
+    "text": "Спасибо! Посмотрю в течение дня",
+    "timestamp": "2024-01-16T11:25:00.000Z",
+    "read": true
+  },
+  {
+    "id": 10,
+    "senderId": 5,
+    "recipientId": 1,
+    "text": "Хорошо, буду ждать ваших комментариев",
+    "timestamp": "2024-01-16T11:26:00.000Z",
+    "read": true
+  },
+  {
+    "id": 11,
+    "senderId": 6,
+    "recipientId": 1,
+    "text": "Здравствуйте! Можно задать вам вопрос по проекту?",
+    "timestamp": "2024-01-17T08:30:00.000Z",
+    "read": true
+  },
+  {
+    "id": 12,
+    "senderId": 7,
+    "recipientId": 1,
+    "text": "Привет! Готов к созвону в 15:00?",
+    "timestamp": "2024-01-17T13:45:00.000Z",
+    "read": true
+  },
+  {
+    "id": 13,
+    "senderId": 1,
+    "recipientId": 7,
+    "text": "Да, готов! Подключайся",
+    "timestamp": "2024-01-17T13:50:00.000Z",
+    "read": true
+  },
+  {
+    "id": 14,
+    "senderId": 8,
+    "recipientId": 1,
+    "text": "Иван, нужно обсудить важный вопрос",
+    "timestamp": "2024-01-16T16:20:00.000Z",
+    "read": true
+  },
+  {
+    "id": 15,
+    "senderId": 9,
+    "recipientId": 1,
+    "text": "Привет! Как продвигается работа над задачей?",
+    "timestamp": "2024-01-18T10:00:00.000Z",
+    "read": true
+  },
+  {
+    "id": 16,
+    "senderId": 1,
+    "recipientId": 9,
+    "text": "Привет! Уже на 80% готово, сегодня закончу",
+    "timestamp": "2024-01-18T10:05:00.000Z",
+    "read": true
+  },
+  {
+    "id": 17,
+    "senderId": 9,
+    "recipientId": 1,
+    "text": "Отлично! Жду результат",
+    "timestamp": "2024-01-18T10:06:00.000Z",
+    "read": true
+  },
+  {
+    "id": 18,
+    "senderId": 10,
+    "recipientId": 1,
+    "text": "Добрый день! Нужна ваша помощь с настройкой",
+    "timestamp": "2024-01-18T11:30:00.000Z",
+    "read": true
+  },
+  {
+    "id": 19,
+    "senderId": 11,
+    "recipientId": 1,
+    "text": "Привет! Как твои успехи в Angular?",
+    "timestamp": "2024-01-18T15:20:00.000Z",
+    "read": true
+  },
+  {
+    "id": 20,
+    "senderId": 1,
+    "recipientId": 11,
+    "text": "Привет! Отлично, недавно закончил новый компонент чата",
+    "timestamp": "2024-01-18T15:25:00.000Z",
+    "read": true
+  },
+  {
+    "id": 21,
+    "senderId": 11,
+    "recipientId": 1,
+    "text": "Круто! Покажешь как работает?",
+    "timestamp": "2024-01-18T15:26:00.000Z",
+    "read": true
+  },
+  {
+    "id": 22,
+    "senderId": 1,
+    "recipientId": 11,
+    "text": "Конечно! Можешь протестировать прямо сейчас",
+    "timestamp": "2024-01-18T15:27:00.000Z",
+    "read": true
+  },
+  {
+    "id": 23,
+    "senderId": 2,
+    "recipientId": 1,
+    "text": "Насчет вчерашней встречи - когда сможем обсудить детали?",
+    "timestamp": "2024-01-16T09:00:00.000Z",
+    "read": true
+  },
+  {
+    "id": 24,
+    "senderId": 1,
+    "recipientId": 2,
+    "text": "Предлагаю сегодня в 16:00",
+    "timestamp": "2024-01-16T09:05:00.000Z",
+    "read": true
+  },
+  {
+    "id": 25,
+    "senderId": 3,
+    "recipientId": 1,
+    "text": "Спасибо за помощь вчера! Очень выручили",
+    "timestamp": "2024-01-15T08:00:00.000Z",
+    "read": true
+  },
+  {
+    "id": 26,
+    "senderId": 1,
+    "recipientId": 3,
+    "text": "Всегда рад помочь! Обращайтесь",
+    "timestamp": "2024-01-15T08:02:00.000Z",
+    "read": true
+  },
+  {
+    "id": 27,
+    "senderId": 4,
+    "recipientId": 1,
+    "text": "Спасибо за информацию! Буду готовить материалы",
+    "timestamp": "2024-01-16T15:00:00.000Z",
+    "read": true
+  },
+  {
+    "id": 28,
+    "senderId": 7,
+    "recipientId": 1,
+    "text": "Созвон был продуктивным, спасибо!",
+    "timestamp": "2024-01-17T16:00:00.000Z",
+    "read": true
+  },
+  {
+    "id": 29,
+    "senderId": 1,
+    "recipientId": 7,
+    "text": "Да, договорились по всем пунктам!",
+    "timestamp": "2024-01-17T16:01:00.000Z",
+    "read": true
+  },
+  {
+    "id": 30,
+    "senderId": 11,
+    "recipientId": 1,
+    "text": "лозххлл",
+    "timestamp": "2025-11-29T15:10:58.786Z",
+    "read": true
+  },
+  {
+    "id": 31,
+    "senderId": 1,
+    "recipientId": 11,
+    "text": "чч",
+    "timestamp": "2025-11-29T15:18:30.547Z",
+    "read": false
+  },
+  {
+    "id": 32,
+    "senderId": 1,
+    "recipientId": 11,
+    "text": "dsf",
+    "timestamp": "2025-12-01T13:52:37.044Z",
+    "read": false
+  },
+  {
+    "id": 33,
+    "senderId": 11,
+    "recipientId": 1,
+    "text": "d",
+    "timestamp": "2025-12-01T13:52:48.125Z",
+    "read": true
+  },
+  {
+    "id": 34,
+    "senderId": 1,
+    "recipientId": 11,
+    "text": "asdfg",
+    "timestamp": "2025-12-01T14:01:04.431Z",
+    "read": false
+  },
+  {
+    "id": 35,
+    "senderId": 1,
+    "recipientId": 11,
+    "text": "jjjj",
+    "timestamp": "2025-12-01T14:02:12.025Z",
+    "read": false
+  },
+  {
+    "id": 36,
+    "senderId": 1,
+    "recipientId": 11,
+    "text": "kkk",
+    "timestamp": "2025-12-01T14:02:32.471Z",
+    "read": false
+  },
+  {
+    "id": 37,
+    "senderId": 1,
+    "recipientId": 11,
+    "text": "dc",
+    "timestamp": "2025-12-01T14:13:11.810Z",
+    "read": false
+  },
+  {
+    "id": 38,
+    "senderId": 1,
+    "recipientId": 11,
+    "text": "s",
+    "timestamp": "2025-12-01T14:13:21.761Z",
+    "read": false
+  },
+  {
+    "id": 39,
+    "senderId": 1,
+    "recipientId": 11,
+    "text": "sdasdasd",
+    "timestamp": "2025-12-01T14:13:40.725Z",
+    "read": false
+  },
+  {
+    "id": 40,
+    "senderId": 1,
+    "recipientId": 11,
+    "text": "ыа",
+    "timestamp": "2025-12-01T15:19:26.575Z",
+    "read": false
+  },
+  {
+    "id": 41,
+    "senderId": 1,
+    "recipientId": 11,
+    "text": "sfdhgdgh",
+    "timestamp": "2025-12-01T15:20:23.554Z",
+    "read": false
+  }
+]

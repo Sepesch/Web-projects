@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "senderId": 2,
+    "receiverId": 1,
+    "content": "Привет всем! Сегодня отличная погода для прогулки в парке. Кто со мной? 🌞",
+    "timestamp": "2024-01-20T10:30:00.000Z",
+    "isPublic": true,
+    "isBlocked": false
+  },
+  {
+    "id": 2,
+    "senderId": 3,
+    "receiverId": null,
+    "content": "Только что попробовал новый рецепт пасты - получилось невероятно вкусно! 🍝 Рекомендую всем готовить дома.",
+    "timestamp": "2024-01-20T12:15:00.000Z",
+    "isPublic": true,
+    "isBlocked": false
+  },
+  {
+    "id": 3,
+    "senderId": 4,
+    "receiverId": 5,
+    "content": "Спасибо за вчерашнюю встречу! Было очень приятно пообщаться и обсудить новые проекты.",
+    "timestamp": "2024-01-19T09:45:00.000Z",
+    "isPublic": false,
+    "isBlocked": false
+  },
+  {
+    "id": 4,
+    "senderId": 5,
+    "receiverId": null,
+    "content": "Только что вернулся из отпуска! Море было просто сказочное 🌊 Фотографии скоро выложу.",
+    "timestamp": "2024-01-18T16:20:00.000Z",
+    "isPublic": true,
+    "isBlocked": true
+  },
+  {
+    "id": 5,
+    "senderId": 6,
+    "receiverId": null,
+    "content": "Нашла отличный способ экономить время на готовке - meal prep на неделю вперед! Экономлю 5+ часов в неделю ⏰",
+    "timestamp": "2024-01-18T14:10:00.000Z",
+    "isPublic": true,
+    "isBlocked": false
+  },
+  {
+    "id": 6,
+    "senderId": 7,
+    "receiverId": 8,
+    "content": "Не забудь, завтра встреча в 11:00. Принеси все документы по проекту.",
+    "timestamp": "2024-01-17T17:30:00.000Z",
+    "isPublic": false,
+    "isBlocked": false
+  },
+  {
+    "id": 7,
+    "senderId": 8,
+    "receiverId": null,
+    "content": "Прочитал потрясающую книгу по саморазвитию! Очень рекомендую всем, кто хочет повысить продуктивность 📚",
+    "timestamp": "2024-01-17T13:25:00.000Z",
+    "isPublic": true,
+    "isBlocked": false
+  },
+  {
+    "id": 8,
+    "senderId": 9,
+    "receiverId": null,
+    "content": "Сегодня установил личный рекорд в беге - 10 км за 45 минут! 💪 Постепенно приближаюсь к своей цели.",
+    "timestamp": "2024-01-16T08:15:00.000Z",
+    "isPublic": true,
+    "isBlocked": false
+  },
+  {
+    "id": 9,
+    "senderId": 10,
+    "receiverId": null,
+    "content": "Поздравляю всех с наступающими праздниками! 🎄 Желаю всем счастья, здоровья и успехов в новом году!",
+    "timestamp": "2024-01-15T20:00:00.000Z",
+    "isPublic": true,
+    "isBlocked": false
+  },
+  {
+    "id": 10,
+    "senderId": 2,
+    "receiverId": null,
+    "content": "Только что закончил важный проект! Чувствую огромное облегчение и гордость за проделанную работу 🎉",
+    "timestamp": "2024-01-15T18:45:00.000Z",
+    "isPublic": true,
+    "isBlocked": true
+  }
+]

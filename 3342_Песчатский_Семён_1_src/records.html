@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тетрис - Рекорды</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            background-color: #34495e;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+        
+        button {
+            font-family: Arial, sans-serif;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #c0392b;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #2c3e50;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #34495e;
+        }
+        
+        th {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #3a506b;
+        }
+        
+        tr:hover {
+            background-color: #4a6180;
+        }
+        
+        .no-records {
+            padding: 20px;
+            font-size: 18px;
+            color: #95a5a6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Таблица рекордов</h1>
+        
+        <div id="records-list"></div>
+        
+        <div>
+            <button onclick="goToMain()">Вернуться к игре</button>
+            <button onclick="goToLogin()">Сменить пользователя</button>
+        </div>
+    </div>
+
+    <script>
+    function loadRecords() {
+    let records = JSON.parse(localStorage.getItem("tetris.records") || "[]");
+    const recordsList = document.getElementById('records-list');
+    
+    const bestRecords = {};
+    
+    records.forEach(record => {
+        const username = record.username;
+        const score = parseInt(record.score);
+        
+        if (!bestRecords[username] || score > parseInt(bestRecords[username].score)) {
+            bestRecords[username] = {
+                username: username,
+                score: score,
+                date: record.date
+            };
+        }
+    });
+    
+    records = Object.values(bestRecords).sort((a, b) => parseInt(b.score) - parseInt(a.score)).slice(0, 10); 
+    localStorage.setItem("tetris.records", JSON.stringify(records));
+    
+    if (records.length === 0) {
+        recordsList.innerHTML = '<div class="no-records">Рекордов пока нет</div>';
+        return;
+    }
+    
+    let html = '<table>';
+    html += '<tr><th>Место</th><th>Игрок</th><th>Счет</th><th>Дата</th></tr>';
+    
+    records.forEach((record, index) => {
+        html += `<tr>
+            <td>${index + 1}</td>
+            <td>${record.username}</td>
+            <td>${record.score}</td>
+            <td>${record.date}</td>
+        </tr>`;
+    });
+    
+    html += '</table>';
+    recordsList.innerHTML = html;
+}
+
+        function goToMain() {
+            window.location = "main.html";
+        }
+
+        function goToLogin() {
+            window.location = "index.html";
+        }
+
+        // Загрузка рекордов при открытии страницы
+        loadRecords();
+    </script>
+</body>
+</html>

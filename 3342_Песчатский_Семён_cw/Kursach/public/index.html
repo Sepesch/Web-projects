@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Стрелялка</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+    <body onload="readUsername()">
+        <div class="container">
+            <h1>2D Стрелялка</h1>
+            
+            <form onsubmit="storeUsername(event)">
+                <label>
+                    Введите имя:
+                </label>
+                <input type="text" id="username" placeholder="Имя пользователя" required>
+                <input type="submit" value="Начать игру">
+            </form>
+        </div>
+
+        <script>
+            function storeUsername(event) {
+                event.preventDefault();
+                const usernameInput = document.getElementById('username');
+                localStorage.setItem("shooter.username", usernameInput.value);
+                window.location = "game.html";
+            }
+
+            function readUsername() {
+                const usernameInput = document.getElementById('username');
+                const savedUsername = localStorage.getItem("shooter.username");
+                if (savedUsername) {
+                    usernameInput.value = savedUsername;
+                }
+            }
+        </script>
+    </body>
+</html>

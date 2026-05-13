@@ -1,0 +1,70 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "lvl1.json",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "Coin_A.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "lvl1.json": {
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 899,
+                "y": 569.5
+            }
+        },
+        "lvl1.tmx": {
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 899,
+                "y": 569.5
+            }
+        },
+        "lvl2.json": {
+            "scale": 0.8959027777777777,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 287.4195798775289,
+                "y": 419.13029997674596
+            }
+        },
+        "tiles.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "/home/sepesch/ground/educ/web/Kursach/public/assets/sprites/items/PNG/Bonus_Items",
+    "map.height": 25,
+    "map.lastUsedFormat": "json",
+    "map.width": 45,
+    "openFiles": [
+        "lvl1.json",
+        "lvl1.json",
+        "Tileset.tsx",
+        "lvl2.json",
+        "lvl1.json",
+        "Coin_A.tsx"
+    ],
+    "project": "map.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "lvl1.json",
+        "Tileset.tsx",
+        "lvl2.json",
+        "Coin_A.tsx",
+        "tiles.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}

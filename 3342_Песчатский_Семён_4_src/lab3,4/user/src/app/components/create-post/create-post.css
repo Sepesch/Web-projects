@@ -1,0 +1,218 @@
+.create-post-body {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.create-post-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    border: none;
+    overflow: hidden;
+}
+
+.create-post-card .card-header {
+    border-radius: 12px 12px 0 0 !important;
+    padding: 1.5rem;
+}
+
+.create-post-card .card-body {
+    padding: 2rem;
+}
+
+/* Аватары */
+.user-avatar-sm {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+/* Поле ввода текста */
+.form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.1);
+}
+
+.form-control::placeholder {
+    color: #6c757d;
+    opacity: 0.7;
+}
+
+/* Сетка опций */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.option-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border: 2px dashed #dee2e6;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.option-item:hover {
+    border-color: #0d6efd;
+    background-color: #f8f9ff;
+    transform: translateY(-2px);
+}
+
+.option-item i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.option-item span {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Секция загрузки изображения */
+.image-upload-section {
+    background-color: #f8f9fa;
+    border: 2px dashed #dee2e6 !important;
+}
+
+.uploaded-image-preview {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Предпросмотр поста */
+.preview-section .card {
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+}
+
+.preview-image {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.post-preview {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* Кнопки */
+.btn {
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0d6efd, #0a58ca);
+    border: none;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: linear-gradient(135deg, #0a58ca, #084298);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .create-post-card .card-body {
+        padding: 1.5rem;
+    }
+    
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .option-item {
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+    }
+    
+    .option-item i {
+        margin-bottom: 0;
+        margin-right: 0.5rem;
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .create-post-card .card-body {
+        padding: 1rem;
+    }
+    
+    .d-flex.gap-2 {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.create-post-card,
+.preview-section .card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Кастомный скроллбар */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}

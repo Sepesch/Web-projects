@@ -1,0 +1,74 @@
+extends layout.pug
+
+block content
+    .w3-bar.w3-margin-top
+        button.w3-button.w3-purple(onclick="showAddBookForm()")
+            i.fas.fa-plus
+            |  Добавить книгу
+        
+        .w3-right
+            select.w3-select.w3-border(style="width: auto;", onchange="filterBooks(this.value)")
+                option(value="all") Все книги
+                option(value="available") В наличии
+                option(value="overdue") Просроченные
+
+    #booksList.w3-row-padding
+        each book in books
+            .w3-col.l4.m6.s12.w3-margin-bottom
+                .w3-card-4.book-card(class=!book.isAvailable ? 'borrowed' : '')
+                    .w3-container
+                        h3= book.title
+                        p 
+                            strong Автор: 
+                            | #{book.author}
+                        p 
+                            strong Год: 
+                            | #{book.year}
+                        
+                        if book.isAvailable
+                            span.w3-tag.w3-green В наличии
+                        else
+                            .w3-margin-top
+                                p
+                                    strong Читатель: 
+                                    | #{book.borrowedBy}
+                                p
+                                    strong Вернуть до: 
+                                    | #{book.dueDate}
+                                if new Date(book.dueDate) < new Date()
+                                    span.w3-tag.w3-red Просрочена
+
+                    footer.w3-container.w3-light-grey
+                        .w3-bar
+                            a.w3-bar-item.w3-button.w3-purple(href=`/book/${book.id}`)
+                                i.fas.fa-edit
+                            button.w3-bar-item.w3-button.w3-red(onclick=`deleteBook(${book.id})`)
+                                i.fas.fa-trash
+                            if book.isAvailable
+                                button.w3-bar-item.w3-button.w3-green(onclick=`borrowBook(${book.id})`)
+                                    i.fas.fa-hand-holding
+                            else
+                                button.w3-bar-item.w3-button.w3-orange(onclick=`returnBook(${book.id})`)
+                                    i.fas.fa-undo
+
+    #addBookForm(style="display: none;").w3-modal
+        .w3-modal-content.w3-card-4
+            header.w3-container.w3-purple
+                h2 Добавить книгу
+            form.w3-container#newBookForm
+                p
+                    label Название:
+                    input.w3-input.w3-border(type="text", name="title", required)
+                p
+                    label Автор:
+                    input.w3-input.w3-border(type="text", name="author", required)
+                p
+                    label Год издания:
+                    input.w3-input.w3-border(type="number", name="year", min="0", max="2025", required)
+                .w3-margin-top
+                    button.w3-button.w3-green(type="submit")
+                        i.fas.fa-plus
+                        |  Добавить
+                    button.w3-button.w3-red(type="button", onclick="hideAddBookForm()")
+                        i.fas.fa-times
+                        |  Отмена
